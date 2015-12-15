@@ -1,0 +1,82 @@
+<%- include partials/header %>
+
+<div class="container">
+
+
+
+    <div class="row">
+
+<form action='/saveprofile' method="POST">
+  <div class="control-group">
+     <label class="control-label" for="Name">Name</label>
+     <div class="controls">
+
+       <input type="text" id="name" name="Name" placeholder="" value="<%= user['Name'] %>" class="form-control input-lg">
+     </div>
+   </div>
+   <div class="control-group">
+      <label class="control-label" for="email">Email</label>
+      <div class="controls">
+
+        <input type="email" id="email" name="email" placeholder="" value="<%= user['email'] %>" class="form-control input-lg">
+      </div>
+    </div>
+    <div class="control-group">
+       <label class="control-label" for="phone">Phone</label>
+       <div class="controls">
+
+         <input type="text" id="phone" name="Phoneno" placeholder="" value="<%= user['Phoneno'] %>" class="form-control input-lg">
+       </div>
+     </div>
+     <div class="control-group">
+        <label class="control-label" for="Address">Address</label>
+        <div class="controls">
+
+          <input type="text" id="Address" name="Address" placeholder="" value="<%= user['Address'] %>" class="form-control input-lg">
+        </div>
+      </div>
+      <div class="control-group">
+         <label class="control-label" for="Address">City</label>
+         <div class="controls">
+
+           <input type="text" id="City" name="City" placeholder="" value="<%= user['City'] %>" class="form-control input-lg">
+         </div>
+       </div>
+       <div class="control-group">
+          <label class="control-label" for="ZIP">ZIP</label>
+          <div class="controls">
+
+            <input type="text" id="ZIP" name="ZIP" placeholder="" value="<%= user['ZIP'] %>" class="form-control input-lg">
+          </div>
+        </div>
+        <div class="control-group">
+           <label class="control-label" for="State">State</label>
+           <div class="controls">
+
+             <input type="text" id="State" name="State" placeholder="" value="<%= user['State'] %>" class="form-control input-lg">
+           </div>
+         </div>
+         <div class="control-group">
+            <label class="control-label" for="Country">Country</label>
+            <div class="controls">
+
+              <input type="text" id="Country" name="Country" placeholder="" value="<%= user['Country'] %>" class="form-control input-lg">
+            </div>
+          </div>
+          <br/>
+          <br/>
+      <div class="control-group">
+          <div class="controls">
+
+          <input type="submit" value="save" class="btn btn-primary">
+
+        </div>
+</div>
+</form>
+    </div>
+
+</div>
+<br/>
+<br/>
+<br/>
+<%- include partials/footer %>

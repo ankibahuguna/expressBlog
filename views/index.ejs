@@ -1,0 +1,21 @@
+<%- include partials/header %>
+<div class="container">
+<div class="row">
+
+  <% for(var count=0;count<posts.length;count++){ %>
+    <div class="post content">
+      <h2><a href="/post/<%= posts[count]['Permalink'] %>"><%= posts[count]['Title'] %></a></h2>
+      <%
+      var canEditPost=canEdit();
+      if(canEditPost && canEditPost==posts[count]['Author']) { %>
+
+        <a href="/edit/<%= posts[count]['Permalink']%>"><i class="fa fa-pencil"></i></a>
+
+      <% } %>
+      <div class="post-excerpt"> <%- posts[count]['Content'].substring(0,40) %> </div>
+    </div>
+    <% } %>
+</div>
+</div>
+</body>
+</html>

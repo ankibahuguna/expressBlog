@@ -1,0 +1,31 @@
+<%- include partials/header %>
+
+<div class="container">
+
+
+<% for(var i in post){ %>
+
+
+    <div class="row">
+      <%
+      var canEditPost=canEdit();
+      if(canEditPost && canEditPost==post[i]['Author']) { %>
+
+        <a href="/edit/<%= post[i]['Permalink']%>"><i class="fa fa-pencil"></i></a>
+
+      <% } %>
+        <div class="post-content">
+            <h2 class="post-title"><%= post[i]['Title'] %>
+        </div>
+        <div class="content post-content">
+            <%- post[i]["Content"] %>
+        </div>
+    </div>
+  <% } %>
+</div>
+
+
+
+
+
+<%- include partials/footer %>

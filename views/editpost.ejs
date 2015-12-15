@@ -1,0 +1,51 @@
+<%- include partials/header %>
+
+<link type="text/css" rel="stylesheet" href="/editor/demo.css">
+<link type="text/css" rel="stylesheet" href="/editor/jquery-te-1.4.0.css">
+<script type="text/javascript" src="/editor/jquery-te-1.4.0.min 2.js" charset="utf-8"></script>
+
+<div class="container">
+
+  <div class="row">
+    <form action="/savepost" method="POST">
+      <div class="control-group">
+<input type="hidden" name="postid" value="<%= post[0]['_id'] %>" >
+        <div class="controls">
+
+        <input type="text" id="title" name="Title" placeholder="Title" value="<%= post[0]['Title'] %>" class="form-control input-lg">
+        </div>
+      </div>
+      <div class="control-group">
+        <textarea name="Content" class="jqte-test"><%= post[0]['Content'] %></textarea>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+
+          <input type="submit" value="Save" class="btn btn-primary">
+
+        </div>
+      </div>
+    </form>
+
+
+  <script>
+    $('.jqte-test').jqte();
+
+    // settings of status
+    var jqteStatus = true;
+    $(".status").click(function()
+    {
+    jqteStatus = jqteStatus ? false : true;
+    $('.jqte-test').jqte({"status" : jqteStatus})
+    });
+  </script>
+
+
+  <hr>
+
+
+  </div>
+
+</div>
+
+<%- include partials/footer %>
